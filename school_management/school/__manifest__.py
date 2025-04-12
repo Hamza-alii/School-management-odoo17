@@ -1,0 +1,31 @@
+{
+    'name': 'School Management System',
+    'version': '1.0',
+    'category': 'Education',
+    'summary': 'Comprehensive School Management System',
+    'author': 'Hamza',
+    'depends': ['base', 'web'],
+    'data': [
+        'security/security.xml',
+        'security/ir.model.access.csv',
+        'views/student_views.xml',
+        'views/class_views.xml',
+        'views/teacher_views.xml',
+        'views/course_views.xml',
+        'views/attendance_views.xml',
+        'views/school_menus_actions.xml',
+        'views/dashboard_views.xml',
+        'report/student_report.xml',
+        'report/attendance_report.xml',
+    ],
+    'assets': {
+        'web.assets_backend': [
+            'school/static/src/css/custom_styles.css',
+            'school/static/src/js/charts.js',
+        ],
+    },
+    'installable': True,
+    'application': True,
+    'license': 'LGPL-3',
+    'auto_install': False,
+}

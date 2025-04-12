@@ -1,0 +1,66 @@
+<odoo>
+    <record id="view_school_dashboard_form" model="ir.ui.view">
+        <field name="name">school.dashboard.form</field>
+        <field name="model">school.dashboard</field>
+        <field name="arch" type="xml">
+            <form string="School Dashboard">
+                <sheet>
+                    <!-- Buttons Section -->
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_students" type="object" class="oe_stat_button" icon="fa-users">
+                            <field string="Students" name="total_students" widget="statinfo"/>
+                        </button>
+                        <button name="action_classes" type="object" class="oe_stat_button" icon="fa-building">
+                            <field string="Classes" name="total_classes" widget="statinfo"/>
+                        </button>
+                        <button name="action_teachers" type="object" class="oe_stat_button" icon="fa-user">
+                            <field string="Teachers" name="total_teachers" widget="statinfo"/>
+                        </button>
+                        <button name="action_courses" type="object" class="oe_stat_button" icon="fa-book">
+                            <field string="Courses" name="total_courses" widget="statinfo"/>
+                        </button>
+                        <button name="action_attendance" type="object" class="oe_stat_button" icon="fa-check-circle">
+                            <field string="Attendance %" name="attendance_percentage" widget="statinfo"/>
+                        </button>
+                    </div>
+
+                    Charts Section
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="o_chart">
+                                <field name="attendance_percentage" widget="pie" options="{'title': 'Attendance Percentage'}"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="o_chart">
+                                <field name="total_students" widget="bar" options="{'title': 'Total Students'}"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="o_chart">
+                                <field name="total_classes" widget="bar" options="{'title': 'Total Classes'}"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="o_chart">
+                                <field name="total_teachers" widget="bar" options="{'title': 'Total Teachers'}"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="o_chart">
+                                <field name="total_courses" widget="pie" options="{'title': 'Total Courses'}"/>
+                            </div>
+                        </div>
+                    </div>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

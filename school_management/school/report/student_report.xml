@@ -1,0 +1,31 @@
+<odoo>
+    <!-- ======= STUDENT REPORT PDF ======= -->
+    <report
+        id="action_report_student"
+        string="Student Report"
+        model="school.student"
+        report_type="qweb-pdf"
+        name="school_management.report_student_template"
+        file="school_management.report_student_template"
+        print_report_name="(object.name or 'Student') + ' Report'"
+    />
+
+    <!-- Report Template -->
+    <template id="report_student_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="student">
+                <div class="page">
+                    <h2>Student Report: <t t-esc="student.name"/></h2>
+                    <p><strong>ID:</strong> <t t-esc="student.student_id"/></p>
+                    <p><strong>Age:</strong> <t t-esc="student.age"/></p>
+                    <p><strong>Gender:</strong> <t t-esc="student.gender"/></p>
+                    <p><strong>Join Date:</strong> <t t-esc="student.join_date"/></p>
+                    <p><strong>Parent Name:</strong> <t t-esc="student.parent_name"/></p>
+                    <p><strong>Parent Phone:</strong> <t t-esc="student.parent_phone"/></p>
+                    <p><strong>Address:</strong> <t t-esc="student.address"/></p>
+                    <p><strong>Class:</strong> <t t-esc="student.class_id.name"/></p>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

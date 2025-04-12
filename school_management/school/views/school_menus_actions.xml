@@ -1,0 +1,74 @@
+<odoo>
+    <!-- MENUS -->
+    <menuitem id="menu_school_root" name="School" sequence="10"/>
+
+    <!-- Student Management -->
+    <menuitem id="menu_school_student_root" name="Student Management" parent="menu_school_root" sequence="1"/>
+    <menuitem id="menu_school_student" name="Students" parent="menu_school_student_root"/>
+
+    <!-- Class Management -->
+    <menuitem id="menu_school_class_root" name="Class Management" parent="menu_school_root" sequence="2"/>
+    <menuitem id="menu_school_class" name="Classes" parent="menu_school_class_root"/>
+
+    <!-- Teacher Management -->
+    <menuitem id="menu_school_teacher_root" name="Teacher Management" parent="menu_school_root" sequence="3"/>
+    <menuitem id="menu_school_teacher" name="Teachers" parent="menu_school_teacher_root"/>
+
+    <!-- Course Management -->
+    <menuitem id="menu_school_course_root" name="Course Management" parent="menu_school_root" sequence="4"/>
+    <menuitem id="menu_school_course" name="Courses" parent="menu_school_course_root"/>
+
+    <!-- Attendance Management -->
+    <menuitem id="menu_school_attendance_root" name="Attendance Management" parent="menu_school_root" sequence="5"/>
+    <menuitem id="menu_school_attendance" name="Attendance" parent="menu_school_attendance_root"/>
+
+    <!-- Dashboard Menu (Moving it to top) -->
+    <menuitem id="menu_dashboard" name="Dashboard" parent="menu_school_root" sequence="0"/>
+
+    <!-- ACTIONS -->
+    <record id="action_students" model="ir.actions.act_window">
+        <field name="name">All Students</field>
+        <field name="res_model">school.student</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_school_class" model="ir.actions.act_window">
+        <field name="name">All Classes</field>
+        <field name="res_model">school.class</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_school_teacher" model="ir.actions.act_window">
+        <field name="name">All Teachers</field>
+        <field name="res_model">school.teacher</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_school_course" model="ir.actions.act_window">
+        <field name="name">All Courses</field>
+        <field name="res_model">school.course</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_school_attendance" model="ir.actions.act_window">
+        <field name="name">All Attendance</field>
+        <field name="res_model">school.attendance</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Dashboard Action -->
+    <record id="action_dashboard" model="ir.actions.act_window">
+        <field name="name">School Dashboard</field>
+        <field name="res_model">school.dashboard</field>
+        <field name="view_mode">form</field>
+        <field name="target">current</field>
+    </record>
+
+    <!-- CONNECT MENUS WITH ACTIONS -->
+    <menuitem id="menu_school_student_action" name="Students" parent="menu_school_student" action="action_students"/>
+    <menuitem id="menu_school_class_action" name="Classes" parent="menu_school_class" action="action_school_class"/>
+    <menuitem id="menu_school_teacher_action" name="Teachers" parent="menu_school_teacher" action="action_school_teacher"/>
+    <menuitem id="menu_school_course_action" name="Courses" parent="menu_school_course" action="action_school_course"/>
+    <menuitem id="menu_school_attendance_action" name="Attendance" parent="menu_school_attendance" action="action_school_attendance"/>
+    <menuitem id="menu_dashboard_action" name="Dashboard" parent="menu_dashboard" action="action_dashboard"/>
+</odoo>

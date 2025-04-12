@@ -1,0 +1,67 @@
+/* Dashboard container styling */
+.o_dashboard .oe_button_box {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Styling buttons on the dashboard */
+.o_dashboard .oe_stat_button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 20px 30px;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.o_dashboard .oe_stat_button:hover {
+    background-color: #45a049;
+}
+
+/* Stat buttons icon styles */
+.o_dashboard .oe_stat_button .fa {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* Styling for charts */
+.o_chart {
+    margin-bottom: 30px;
+}
+
+.o_dashboard .o_chart .o_graph {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.o_dashboard .o_chart field {
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .o_dashboard .oe_button_box {
+        flex-direction: column;
+        align-items: center;
+    }
+    .o_dashboard .oe_stat_button {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 15px;
+    }
+    .o_dashboard .row {
+        flex-direction: column;
+    }
+    .o_dashboard .o_chart {
+        width: 100%;
+    }
+}

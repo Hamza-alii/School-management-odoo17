@@ -1,0 +1,35 @@
+<odoo>
+    <!-- Course Form View -->
+    <record id="view_course_form" model="ir.ui.view">
+        <field name="name">school.course.form</field>
+        <field name="model">school.course</field>
+        <field name="arch" type="xml">
+            <form string="Course">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="teacher_id"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="class_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Course Tree View -->
+    <record id="view_course_tree" model="ir.ui.view">
+        <field name="name">school.course.tree</field>
+        <field name="model">school.course</field>
+        <field name="arch" type="xml">
+            <tree string="Courses">
+                <field name="name"/>
+                <field name="teacher_id"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
